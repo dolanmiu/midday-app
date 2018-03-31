@@ -1,5 +1,6 @@
 // angular
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
 
 // nativescript
 import { NativeScriptModule } from 'nativescript-angular/nativescript.module';
@@ -12,16 +13,17 @@ import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  imports: [
-    NativeScriptModule,
-    NativeScriptHttpClientModule,
-    CoreModule,
-    SharedModule,
-    AppRoutingModule
-  ],
-  declarations: [AppComponent],
-  bootstrap: [AppComponent],
-  schemas: [NO_ERRORS_SCHEMA]
+    imports: [
+        NativeScriptModule,
+        NativeScriptHttpClientModule,
+        CoreModule,
+        SharedModule,
+        AppRoutingModule,
+        StoreModule.forRoot({}),
+    ],
+    declarations: [AppComponent],
+    bootstrap: [AppComponent],
+    schemas: [NO_ERRORS_SCHEMA],
 })
 /*
 Pass your application module to the bootstrapModule function located in main.ts to start your app
